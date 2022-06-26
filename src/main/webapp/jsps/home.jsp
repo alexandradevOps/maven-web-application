@@ -9,7 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Dominion systems A Landmark Software Solution.</h1>
+<h1 align="center">Welcome to Landmark Technologies.</h1>
 <h2 align="center"> We are raising over 1m milionaires by 2030.
 	Landmark Technologies is a software development company. 
 	Class28 will run from April 09, 2022.
