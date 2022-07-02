@@ -1,0 +1,36 @@
+node{
+def mavenHome = tool name: 'maven3.8.6'    
+ stage('1cloneCode'){
+    sh "echo running a software build a deployment project for paypal" 
+    git "https://github.com/alexandradevOps/maven-web-application"
+ } 
+ stage('2Test&Build'){
+     sh "${mavenHome}/bin/mvn install"
+ }
+ /*
+ stage('3CodeQuality'){
+   sh "${mavenHome}/bin/mvn sonar:sonar"
+ }
+ stage('4UploadArtifacts'){
+   sh "${mavenHome}/bin/mvn deploy"
+ }
+ stage('5deploy_uat'){
+ deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://54.193.75.186:8080/'), tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://54.193.75.186:8080/')], contextPath: null, war: 'target/*war'
+ }
+ stage('6Approval'){
+     timeout(time:9,unit:'HOURS'){
+         input message: 'Application ready for deployment, please review and approve'
+     }
+ }
+ stage('7deploy_prod'){
+    deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://54.193.75.186:8080/'), tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://54.193.75.186:8080/')], contextPath: null, war: 'target/*war' 
+}
+ stage('8Notification'){
+     //pipeline syntax
+    emailext body: '''Build status for frontend application.
+
+Regards,
+landmark technologies''', recipientProviders: [buildUser(), developers(), contributor()], subject: 'Build status', to: 'paypal-team@gmail.com' 
+ }
+ */
+}
