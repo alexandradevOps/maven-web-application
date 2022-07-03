@@ -7,7 +7,6 @@ def mavenHome = tool name: 'maven3.8.6'
  stage('2Test&Build'){
      sh "${mavenHome}/bin/mvn install"
  }
- /*
  stage('3CodeQuality'){
    sh "${mavenHome}/bin/mvn sonar:sonar"
  }
@@ -32,5 +31,4 @@ def mavenHome = tool name: 'maven3.8.6'
 Regards,
 landmark technologies''', recipientProviders: [buildUser(), developers(), contributor()], subject: 'Build status', to: 'paypal-team@gmail.com' 
  }
- */
 }
